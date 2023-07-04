@@ -7,25 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		541CA57C2A29722100E22AB8 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541CA57B2A29722100E22AB8 /* LocationsViewController.swift */; };
+		541CA57E2A29743B00E22AB8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541CA57D2A29743B00E22AB8 /* SearchViewController.swift */; };
+		541CA5802A3011C400E22AB8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541CA57F2A3011C400E22AB8 /* CoreDataManager.swift */; };
+		541CA5842A301A7300E22AB8 /* ConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541CA5832A301A7300E22AB8 /* ConditionsViewController.swift */; };
+		54288C772A4C55AF0078130E /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54288C762A4C55AF0078130E /* WeatherManager.swift */; };
+		54288C7B2A4E60650078130E /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54288C7A2A4E60650078130E /* WeatherModel.swift */; };
+		54288C7D2A4E60790078130E /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54288C7C2A4E60790078130E /* WeatherData.swift */; };
+		54288C812A51C1F00078130E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54288C802A51C1F00078130E /* Assets.xcassets */; };
 		54936B872A2037D7009154DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54936B862A2037D7009154DF /* AppDelegate.swift */; };
 		54936B892A2037D7009154DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54936B882A2037D7009154DF /* SceneDelegate.swift */; };
-		54936B8B2A2037D7009154DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54936B8A2A2037D7009154DF /* ViewController.swift */; };
 		54936B8E2A2037D7009154DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54936B8C2A2037D7009154DF /* Main.storyboard */; };
 		54936B912A2037D7009154DF /* DryTrails.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54936B8F2A2037D7009154DF /* DryTrails.xcdatamodeld */; };
 		54936B932A2037D7009154DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54936B922A2037D7009154DF /* Assets.xcassets */; };
 		54936B962A2037D7009154DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54936B942A2037D7009154DF /* LaunchScreen.storyboard */; };
+		71A5453454F7F0A6C36B1513 /* Pods_DryTrails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083D72E60DB32C9BD9E38225 /* Pods_DryTrails.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		083D72E60DB32C9BD9E38225 /* Pods_DryTrails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DryTrails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45BED4D9030F00A9D86588CE /* Pods-DryTrails.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DryTrails.release.xcconfig"; path = "Target Support Files/Pods-DryTrails/Pods-DryTrails.release.xcconfig"; sourceTree = "<group>"; };
+		541CA57B2A29722100E22AB8 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
+		541CA57D2A29743B00E22AB8 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		541CA57F2A3011C400E22AB8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		541CA5832A301A7300E22AB8 /* ConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionsViewController.swift; sourceTree = "<group>"; };
+		541CA5852A32AE7700E22AB8 /* DryTrails.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DryTrails.entitlements; sourceTree = "<group>"; };
+		54288C762A4C55AF0078130E /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		54288C7A2A4E60650078130E /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		54288C7C2A4E60790078130E /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		54288C802A51C1F00078130E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Downloads/AppIcons (4)/Assets.xcassets"; sourceTree = "<group>"; };
 		54936B832A2037D7009154DF /* DryTrails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DryTrails.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54936B862A2037D7009154DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54936B882A2037D7009154DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		54936B8A2A2037D7009154DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		54936B8D2A2037D7009154DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		54936B902A2037D7009154DF /* DryTrails.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DryTrails.xcdatamodel; sourceTree = "<group>"; };
 		54936B922A2037D7009154DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54936B952A2037D7009154DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54936B972A2037D7009154DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5544E6D73DAFEB0EE9E8D4F9 /* Pods-DryTrails.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DryTrails.debug.xcconfig"; path = "Target Support Files/Pods-DryTrails/Pods-DryTrails.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71A5453454F7F0A6C36B1513 /* Pods_DryTrails.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +64,8 @@
 			children = (
 				54936B852A2037D7009154DF /* DryTrails */,
 				54936B842A2037D7009154DF /* Products */,
+				D989A1E40D0E6A8B5928F416 /* Pods */,
+				C4AF2F8AF52752921A22029F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +80,73 @@
 		54936B852A2037D7009154DF /* DryTrails */ = {
 			isa = PBXGroup;
 			children = (
-				54936B862A2037D7009154DF /* AppDelegate.swift */,
-				54936B882A2037D7009154DF /* SceneDelegate.swift */,
-				54936B8A2A2037D7009154DF /* ViewController.swift */,
-				54936B8C2A2037D7009154DF /* Main.storyboard */,
-				54936B922A2037D7009154DF /* Assets.xcassets */,
-				54936B942A2037D7009154DF /* LaunchScreen.storyboard */,
+				541CA5852A32AE7700E22AB8 /* DryTrails.entitlements */,
+				54936B9F2A2038F1009154DF /* Model */,
+				54936B9E2A2038CB009154DF /* Views */,
+				54936B9D2A2038B9009154DF /* Controllers */,
+				54936BA02A203941009154DF /* Supporting Files */,
 				54936B972A2037D7009154DF /* Info.plist */,
-				54936B8F2A2037D7009154DF /* DryTrails.xcdatamodeld */,
 			);
 			path = DryTrails;
+			sourceTree = "<group>";
+		};
+		54936B9D2A2038B9009154DF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				541CA57B2A29722100E22AB8 /* LocationsViewController.swift */,
+				541CA57D2A29743B00E22AB8 /* SearchViewController.swift */,
+				541CA5832A301A7300E22AB8 /* ConditionsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		54936B9E2A2038CB009154DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				54936B8C2A2037D7009154DF /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		54936B9F2A2038F1009154DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				54936B8F2A2037D7009154DF /* DryTrails.xcdatamodeld */,
+				541CA57F2A3011C400E22AB8 /* CoreDataManager.swift */,
+				54288C762A4C55AF0078130E /* WeatherManager.swift */,
+				54288C7C2A4E60790078130E /* WeatherData.swift */,
+				54288C7A2A4E60650078130E /* WeatherModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		54936BA02A203941009154DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				54936B882A2037D7009154DF /* SceneDelegate.swift */,
+				54936B862A2037D7009154DF /* AppDelegate.swift */,
+				54936B922A2037D7009154DF /* Assets.xcassets */,
+				54288C802A51C1F00078130E /* Assets.xcassets */,
+				54936B942A2037D7009154DF /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C4AF2F8AF52752921A22029F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				083D72E60DB32C9BD9E38225 /* Pods_DryTrails.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D989A1E40D0E6A8B5928F416 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5544E6D73DAFEB0EE9E8D4F9 /* Pods-DryTrails.debug.xcconfig */,
+				45BED4D9030F00A9D86588CE /* Pods-DryTrails.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54936B9A2A2037D7009154DF /* Build configuration list for PBXNativeTarget "DryTrails" */;
 			buildPhases = (
+				A5A6699345528252894D4ADB /* [CP] Check Pods Manifest.lock */,
 				54936B7F2A2037D7009154DF /* Sources */,
 				54936B802A2037D7009154DF /* Frameworks */,
 				54936B812A2037D7009154DF /* Resources */,
+				D45EA4EFEFD7CD78EED61B4D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,21 +211,70 @@
 			files = (
 				54936B962A2037D7009154DF /* LaunchScreen.storyboard in Resources */,
 				54936B932A2037D7009154DF /* Assets.xcassets in Resources */,
+				54288C812A51C1F00078130E /* Assets.xcassets in Resources */,
 				54936B8E2A2037D7009154DF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A5A6699345528252894D4ADB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DryTrails-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D45EA4EFEFD7CD78EED61B4D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DryTrails/Pods-DryTrails-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DryTrails/Pods-DryTrails-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DryTrails/Pods-DryTrails-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		54936B7F2A2037D7009154DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				541CA5802A3011C400E22AB8 /* CoreDataManager.swift in Sources */,
+				541CA57E2A29743B00E22AB8 /* SearchViewController.swift in Sources */,
+				541CA5842A301A7300E22AB8 /* ConditionsViewController.swift in Sources */,
+				541CA57C2A29722100E22AB8 /* LocationsViewController.swift in Sources */,
 				54936B912A2037D7009154DF /* DryTrails.xcdatamodeld in Sources */,
-				54936B8B2A2037D7009154DF /* ViewController.swift in Sources */,
+				54288C772A4C55AF0078130E /* WeatherManager.swift in Sources */,
 				54936B872A2037D7009154DF /* AppDelegate.swift in Sources */,
 				54936B892A2037D7009154DF /* SceneDelegate.swift in Sources */,
+				54288C7D2A4E60790078130E /* WeatherData.swift in Sources */,
+				54288C7B2A4E60650078130E /* WeatherModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,9 +416,11 @@
 		};
 		54936B9B2A2037D7009154DF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5544E6D73DAFEB0EE9E8D4F9 /* Pods-DryTrails.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DryTrails/DryTrails.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H9MJ7YJ3M9;
@@ -297,8 +429,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,9 +447,11 @@
 		};
 		54936B9C2A2037D7009154DF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45BED4D9030F00A9D86588CE /* Pods-DryTrails.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DryTrails/DryTrails.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H9MJ7YJ3M9;
@@ -325,8 +460,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
