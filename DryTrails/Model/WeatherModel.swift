@@ -16,8 +16,8 @@ struct WeatherModel {
     let sunrise: [String]
     let sunset: [String]
     let weathercode: Int
-//    let degreesString = "° F"
-    //var units = 1
+    let timeHour: [String]
+    let soil_moisture_1_3cm: [Double]
     
     var temperatureString: String {
         return String(format: "%.0f", temperature) + degreesString
