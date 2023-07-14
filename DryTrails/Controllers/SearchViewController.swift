@@ -104,15 +104,8 @@ extension SearchViewController: UITableViewDelegate {
             guard let name = response?.mapItems[0].name else {
                 return
             }
-            
-            print(name)
-            
             let lat = coordinate.latitude
             let lon = coordinate.longitude
-            
-            print(lat)
-            print(lon)
-            
             guard let conditionsVC = self.storyboard?.instantiateViewController(identifier: "conditionsView", creator: { coder in
                 return ConditionsViewController(coder: coder, name: name, lat: Float(lat), lon: Float(lon))
                 

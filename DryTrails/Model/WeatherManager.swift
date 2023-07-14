@@ -25,14 +25,11 @@ struct WeatherManager {
                 let precipitationUnits = "inch"
                 let urlString = "https://api.open-meteo.com/v1/forecast?latitude=\(latitude)&longitude=\(longitude)&hourly=soil_moisture_1_3cm&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum&current_weather=true&temperature_unit=\(tempUnits)&windspeed_unit=\(windUnits)&precipitation_unit=\(precipitationUnits)&past_days=3&forecast_days=3&timezone=auto"
                 performRequest(with: urlString)
-//                print(urlString)
-//                print(UserDefaults.standard.bool(forKey: "notMetric"))
             } else if (UserDefaults.standard.bool(forKey: "notMetric") == false) {
                 
                 let urlString = "https://api.open-meteo.com/v1/forecast?latitude=\(latitude)&longitude=\(longitude)&hourly=soil_moisture_1_3cm&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum&current_weather=true&past_days=3&forecast_days=3&timezone=auto"
                 performRequest(with: urlString)
-//                print(urlString)
-//                print(UserDefaults.standard.bool(forKey: "notMetric"))
+
             }
         }
         

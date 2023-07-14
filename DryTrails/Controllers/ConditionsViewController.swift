@@ -90,10 +90,8 @@ extension ConditionsViewController: WeatherManagerDelegate {
             let finalResult = noMinuteResult.appending("00")
             if let index = weather.timeHour.firstIndex(of: finalResult) {
                 let soilMoisture = weather.soil_moisture_1_3cm[index]
-                self.soilMoistureLabel.text = String(soilMoisture)
+                self.soilMoistureLabel.text = String(format: "%.1f %%", (soilMoisture * 100))
             }
-            
-            
         }
     }
     func didFailWithError(error: Error) {
