@@ -67,16 +67,9 @@ struct WeatherModel {
         case 0:
             //Clear Sky
             return currentTime > dateFormatter.date(from: sunrise[3]) ?? Date() && currentTime < dateFormatter.date(from: sunset[3]) ?? Date() ? "sun.max" : "moon.stars"
-                
-            
-//            if currentTime > dateFormatter.date(from: sunrise[3]) ?? Date() && currentTime < dateFormatter.date(from: sunset[3]) ?? Date() {
-//                return "sun.max"
-//            } else {
-//                return "moon.stars"
-//            }
         case 1...3:
             //Mainly clear, partly cloudy, and overcast
-            return "cloud.sun"
+            return currentTime > dateFormatter.date(from: sunrise[3]) ?? Date() && currentTime < dateFormatter.date(from: sunset[3]) ?? Date() ? "cloud.sun" : "cloud.moon"
         case 45...48:
             //Fog and depositing rime fog
             return "cloud.fog"
