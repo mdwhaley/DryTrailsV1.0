@@ -61,12 +61,7 @@ struct WeatherModel {
             return "%.0f"
         }
     }
-    // Working on using a moon and star image for clear conditions before sunrise and after sunset. Need to convert date string to time valiue and compare
-//    func isDaylight(sunrise: Date, sunset: Date) -> Bool {
-//        let currentTime = Date()
-//        return currentTime > sunrise && currentTime < sunset
-//    }
-
+    
     var conditionName: String {
         switch weathercode {
         case 0:
