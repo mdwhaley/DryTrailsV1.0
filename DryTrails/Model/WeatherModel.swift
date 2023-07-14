@@ -59,6 +59,16 @@ struct WeatherModel {
             return "%.0f"
         }
     }
+    // Working on using a moon and star image for clear conditions before sunrise and after sunset. Need to convert date string to time valiue and compare
+//    var isDark: Bool {
+//        let timeStamp = Date().timeIntervalSince1970
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+//        let sunrise = formatter.sunrise[3].timeIntervalSince(1970)
+//        if  timeStamp < formatter.weather.sunrise[3] ||  timeStamp > formatter.sunset[3] {
+//
+//        }
+//    }
 
     var conditionName: String {
         switch weathercode {

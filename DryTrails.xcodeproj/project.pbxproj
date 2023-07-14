@@ -11,15 +11,15 @@
 		541CA57E2A29743B00E22AB8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541CA57D2A29743B00E22AB8 /* SearchViewController.swift */; };
 		541CA5802A3011C400E22AB8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541CA57F2A3011C400E22AB8 /* CoreDataManager.swift */; };
 		541CA5842A301A7300E22AB8 /* ConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541CA5832A301A7300E22AB8 /* ConditionsViewController.swift */; };
+		54216C1C2A60C7CA00EE1B09 /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 54216C1A2A60C7CA00EE1B09 /* appstore.png */; };
+		54216C1E2A60CADF00EE1B09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54216C1D2A60CADF00EE1B09 /* Assets.xcassets */; };
 		54288C772A4C55AF0078130E /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54288C762A4C55AF0078130E /* WeatherManager.swift */; };
 		54288C7B2A4E60650078130E /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54288C7A2A4E60650078130E /* WeatherModel.swift */; };
 		54288C7D2A4E60790078130E /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54288C7C2A4E60790078130E /* WeatherData.swift */; };
-		54288C812A51C1F00078130E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54288C802A51C1F00078130E /* Assets.xcassets */; };
 		54936B872A2037D7009154DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54936B862A2037D7009154DF /* AppDelegate.swift */; };
 		54936B892A2037D7009154DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54936B882A2037D7009154DF /* SceneDelegate.swift */; };
 		54936B8E2A2037D7009154DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54936B8C2A2037D7009154DF /* Main.storyboard */; };
 		54936B912A2037D7009154DF /* DryTrails.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54936B8F2A2037D7009154DF /* DryTrails.xcdatamodeld */; };
-		54936B932A2037D7009154DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54936B922A2037D7009154DF /* Assets.xcassets */; };
 		54936B962A2037D7009154DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54936B942A2037D7009154DF /* LaunchScreen.storyboard */; };
 		71A5453454F7F0A6C36B1513 /* Pods_DryTrails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083D72E60DB32C9BD9E38225 /* Pods_DryTrails.framework */; };
 /* End PBXBuildFile section */
@@ -32,16 +32,16 @@
 		541CA57F2A3011C400E22AB8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		541CA5832A301A7300E22AB8 /* ConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionsViewController.swift; sourceTree = "<group>"; };
 		541CA5852A32AE7700E22AB8 /* DryTrails.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DryTrails.entitlements; sourceTree = "<group>"; };
+		54216C1A2A60C7CA00EE1B09 /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appstore.png; sourceTree = "<group>"; };
+		54216C1D2A60CADF00EE1B09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54288C762A4C55AF0078130E /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		54288C7A2A4E60650078130E /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		54288C7C2A4E60790078130E /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
-		54288C802A51C1F00078130E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Downloads/AppIcons (4)/Assets.xcassets"; sourceTree = "<group>"; };
 		54936B832A2037D7009154DF /* DryTrails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DryTrails.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54936B862A2037D7009154DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54936B882A2037D7009154DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		54936B8D2A2037D7009154DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		54936B902A2037D7009154DF /* DryTrails.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DryTrails.xcdatamodel; sourceTree = "<group>"; };
-		54936B922A2037D7009154DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54936B952A2037D7009154DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54936B972A2037D7009154DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5544E6D73DAFEB0EE9E8D4F9 /* Pods-DryTrails.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DryTrails.debug.xcconfig"; path = "Target Support Files/Pods-DryTrails/Pods-DryTrails.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,8 +125,8 @@
 			children = (
 				54936B882A2037D7009154DF /* SceneDelegate.swift */,
 				54936B862A2037D7009154DF /* AppDelegate.swift */,
-				54936B922A2037D7009154DF /* Assets.xcassets */,
-				54288C802A51C1F00078130E /* Assets.xcassets */,
+				54216C1A2A60C7CA00EE1B09 /* appstore.png */,
+				54216C1D2A60CADF00EE1B09 /* Assets.xcassets */,
 				54936B942A2037D7009154DF /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
@@ -210,9 +210,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				54936B962A2037D7009154DF /* LaunchScreen.storyboard in Resources */,
-				54936B932A2037D7009154DF /* Assets.xcassets in Resources */,
-				54288C812A51C1F00078130E /* Assets.xcassets in Resources */,
+				54216C1C2A60C7CA00EE1B09 /* appstore.png in Resources */,
 				54936B8E2A2037D7009154DF /* Main.storyboard in Resources */,
+				54216C1E2A60CADF00EE1B09 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -81,17 +81,21 @@ var weatherUnits = 1
 extension LocationsViewController: SwipeTableViewCellDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
-
+        
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
             // handle action by updating model with deletion
             CoreDataManager.shared.context.delete(CoreDataManager.shared.locationsArray[indexPath.row])
             CoreDataManager.shared.locationsArray.remove(at: indexPath.row)
             CoreDataManager.shared.saveContext()
-            tableView.reloadData()
         }
-
+        
         // customize the action appearance
         deleteAction.image = UIImage(named: "deleteIcon")
-            return [deleteAction]
+        return [deleteAction]
+    }
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        return options
     }
 }
