@@ -18,6 +18,8 @@ struct WeatherModel {
     let weathercode: Int
     let timeHour: [String]
     let soil_moisture_1_3cm: [Double]
+    let currentTime = Date()
+    let dateFormatter = DateFormatter()
     
     var temperatureString: String {
         return String(format: "%.0f", temperature) + degreesString
@@ -60,21 +62,20 @@ struct WeatherModel {
         }
     }
     // Working on using a moon and star image for clear conditions before sunrise and after sunset. Need to convert date string to time valiue and compare
-//    var isDark: Bool {
-//        let timeStamp = Date().timeIntervalSince1970
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
-//        let sunrise = formatter.sunrise[3].timeIntervalSince(1970)
-//        if  timeStamp < formatter.weather.sunrise[3] ||  timeStamp > formatter.sunset[3] {
-//
-//        }
+//    func isDaylight(sunrise: Date, sunset: Date) -> Bool {
+//        let currentTime = Date()
+//        return currentTime > sunrise && currentTime < sunset
 //    }
 
     var conditionName: String {
         switch weathercode {
         case 0:
             //Clear Sky
-            return "sun.max"
+            if currentTime > dateFormatter.date(from: sunrise[3]) ?? Date() && currentTime < dateFormatter.date(from: sunset[3]) ?? Date() {
+                return "sun.max"
+            } else {
+                return "moon.stars"
+            }
         case 1...3:
             //Mainly clear, partly cloudy, and overcast
             return "cloud.sun"
