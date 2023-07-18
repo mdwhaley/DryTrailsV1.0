@@ -18,24 +18,28 @@ struct WeatherModel {
     let weathercode: Int
     let timeHour: [String]
     let soil_moisture_1_3cm: [Double]
-    let currentTime = Date()
+    let currentTime = Date().timeIntervalSince1970
     let dateFormatter = DateFormatter()
     
     var temperatureString: String {
         return String(format: "%.0f", temperature) + degreesString
     }
+    
     var loTemperatureString: String {
         return String(format: "%.0f", temperature_2m_min) + degreesString
     }
     var hiTemperatureString: String {
         return String(format: "%.0f", temperature_2m_max) + degreesString
     }
+    
     var sunRiseString: String {
         return "Sunrise: " + String(sunrise[3].dropFirst(11))
     }
+    
     var sunSetString: String {
         return "Sunset: " + String(sunset[3].dropFirst(11))
     }
+    
     var degreesString: String {
         switch UserDefaults.standard.bool(forKey: "notMetric") {
         case true:
@@ -44,6 +48,7 @@ struct WeatherModel {
             return "°C"
         }
     }
+    
     var precipitationString: String {
         switch UserDefaults.standard.bool(forKey: "notMetric") {
         case true:
@@ -62,14 +67,23 @@ struct WeatherModel {
         }
     }
     
+    var isLight: Bool {
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+        let sunRiseTime = (dateFormatter.date(from: sunrise[3])?.timeIntervalSince1970)!
+        let sunSetTime = (dateFormatter.date(from: sunset[3])?.timeIntervalSince1970)!
+        if sunRiseTime < currentTime && currentTime < sunSetTime {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     var conditionName: String {
         switch weathercode {
         case 0:
-            //Clear Sky
-            return currentTime > dateFormatter.date(from: sunrise[3]) ?? Date() && currentTime < dateFormatter.date(from: sunset[3]) ?? Date() ? "sun.max" : "moon.stars"
+            return isLight ? "sun.max" : "moon.stars"
         case 1...3:
-            //Mainly clear, partly cloudy, and overcast
-            return currentTime > dateFormatter.date(from: sunrise[3]) ?? Date() && currentTime < dateFormatter.date(from: sunset[3]) ?? Date() ? "cloud.sun" : "cloud.moon"
+            return isLight ? "cloud.sun" : "cloud.moon"
         case 45...48:
             //Fog and depositing rime fog
             return "cloud.fog"
@@ -108,3 +122,4 @@ struct WeatherModel {
         }
     }
 }
+
