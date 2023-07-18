@@ -35,7 +35,7 @@ struct WeatherManager {
         
         
         func performRequest(with urlString: String) {
-            if let url = URL(string: urlString) {
+            if let url = URL(string: urlString) {iiu
                 let session = URLSession(configuration: .default)
                 let task = session.dataTask(with: url) { (data, response, error) in
                     if error != nil {
@@ -65,8 +65,9 @@ struct WeatherManager {
                 let sunriseTime = decodedData.daily.sunrise
                 let sunsetTime = decodedData.daily.sunset
                 let hour = decodedData.hourly.time
+                let isLight = decodedData.current_weather.is_day
                 let soilMoisture = decodedData.hourly.soil_moisture_1_3cm
-                let weather = WeatherModel(temperature: temp, temperature_2m_min: minTemp, temperature_2m_max: maxTemp, precipitation_sum: dailyRain, time: dates, sunrise: sunriseTime, sunset: sunsetTime, weathercode: conditionName, timeHour: hour, soil_moisture_1_3cm: soilMoisture)
+                let weather = WeatherModel(temperature: temp, temperature_2m_min: minTemp, temperature_2m_max: maxTemp, precipitation_sum: dailyRain, time: dates, sunrise: sunriseTime, sunset: sunsetTime, weathercode: conditionName, timeHour: hour, soil_moisture_1_3cm: soilMoisture, is_day: isLight)
                 return weather
                 
             } catch {

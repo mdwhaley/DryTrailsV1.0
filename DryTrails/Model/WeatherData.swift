@@ -16,6 +16,7 @@ struct WeatherData: Codable {
 struct Main: Codable {
     let temperature: Double
     let weathercode: Int
+    let is_day: Int
 }
 struct Hourly: Codable {
     let time: [String]

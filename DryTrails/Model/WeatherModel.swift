@@ -18,8 +18,9 @@ struct WeatherModel {
     let weathercode: Int
     let timeHour: [String]
     let soil_moisture_1_3cm: [Double]
-    let currentTime = Date().timeIntervalSince1970
-    let dateFormatter = DateFormatter()
+    let is_day: Int
+//    let currentTime = Date().timeIntervalSince1970
+//    let dateFormatter = DateFormatter()
     
     var temperatureString: String {
         return String(format: "%.0f", temperature) + degreesString
@@ -67,23 +68,25 @@ struct WeatherModel {
         }
     }
     
-    var isLight: Bool {
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
-        let sunRiseTime = (dateFormatter.date(from: sunrise[3])?.timeIntervalSince1970)!
-        let sunSetTime = (dateFormatter.date(from: sunset[3])?.timeIntervalSince1970)!
-        if sunRiseTime < currentTime && currentTime < sunSetTime {
-            return true
-        } else {
-            return false
-        }
-    }
+//    var isLight: Bool {
+//        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+//        let sunRiseTime = (dateFormatter.date(from: sunrise[3])?.timeIntervalSince1970)!
+//        let sunSetTime = (dateFormatter.date(from: sunset[3])?.timeIntervalSince1970)!
+//        if sunRiseTime < currentTime && currentTime < sunSetTime {
+//            return true
+//        } else {
+//            return false
+//        }
+//    }
     
     var conditionName: String {
         switch weathercode {
         case 0:
-            return isLight ? "sun.max" : "moon.stars"
+            //Clear Skies
+            //is_day 1 is daylight at location and 0 is dark
+            return is_day == 1 ? "sun.max" : "moon.stars"
         case 1...3:
-            return isLight ? "cloud.sun" : "cloud.moon"
+            return is_day == 1 ? "cloud.sun" : "cloud.moon"
         case 45...48:
             //Fog and depositing rime fog
             return "cloud.fog"
@@ -95,7 +98,7 @@ struct WeatherModel {
             return "cloud.sleet"
         case 61...65:
             //Rain: Slight, moderate and heavy intensity
-            return "cloud.rain"
+            return is_day == 1 ? "cloud.rain" : "cloud.moon.rain"
         case 66...67:
             //Freezing Rain: Light and heavy intensity
             return "cloud.sleet"
@@ -107,18 +110,18 @@ struct WeatherModel {
             return "snow"
         case 80...82:
             //Rain showers: Slight, moderate, and violent
-            return "cloud.rain"
+            return is_day == 1 ? "cloud.rain" : "cloud.moon.rain"
         case 85...86:
             //Snow showers slight and heavy
             return "cloud.snow"
         case 95:
             //Thunderstorm: Slight or moderate
-            return "cloud.bolt"
+            return is_day == 1 ? "cloud.bolt" : "cloud.moon.bolt"
         case 96...99:
             //Thunderstorm with slight and heavy hail
-            return "cloud.bolt"
+            return is_day == 1 ? "cloud.bolt" : "cloud.moon.bolt"
         default:
-            return "cloud"
+            return is_day == 1 ? "cloud" : "clound.moon"
         }
     }
 }
