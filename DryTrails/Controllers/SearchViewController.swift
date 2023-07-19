@@ -28,7 +28,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MKLocalSearch
         searchResultsTable?.dataSource = self
     }
     
-    
     // This method declares that whenever the text in the searchbar is change to also update
     // the query that the searchCompleter will search based off of
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -51,8 +50,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate, MKLocalSearch
     func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
         // Error
     }
-
-
 }
 
 // Setting up extensions for the table view

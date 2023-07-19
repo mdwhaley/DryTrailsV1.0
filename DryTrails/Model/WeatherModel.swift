@@ -19,8 +19,6 @@ struct WeatherModel {
     let timeHour: [String]
     let soil_moisture_1_3cm: [Double]
     let is_day: Int
-//    let currentTime = Date().timeIntervalSince1970
-//    let dateFormatter = DateFormatter()
     
     var temperatureString: String {
         return String(format: "%.0f", temperature) + degreesString
@@ -67,17 +65,6 @@ struct WeatherModel {
             return "%.0f"
         }
     }
-    
-//    var isLight: Bool {
-//        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
-//        let sunRiseTime = (dateFormatter.date(from: sunrise[3])?.timeIntervalSince1970)!
-//        let sunSetTime = (dateFormatter.date(from: sunset[3])?.timeIntervalSince1970)!
-//        if sunRiseTime < currentTime && currentTime < sunSetTime {
-//            return true
-//        } else {
-//            return false
-//        }
-//    }
     
     var conditionName: String {
         switch weathercode {

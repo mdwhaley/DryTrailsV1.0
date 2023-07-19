@@ -12,8 +12,6 @@ protocol WeatherManagerDelegate {
     func didFailWithError(error: Error)
 }
 
-
-
 struct WeatherManager {
 
     var delegate: WeatherManagerDelegate?
@@ -26,16 +24,13 @@ struct WeatherManager {
                 let urlString = "https://api.open-meteo.com/v1/forecast?latitude=\(latitude)&longitude=\(longitude)&hourly=soil_moisture_1_3cm&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum&current_weather=true&temperature_unit=\(tempUnits)&windspeed_unit=\(windUnits)&precipitation_unit=\(precipitationUnits)&past_days=3&forecast_days=3&timezone=auto"
                 performRequest(with: urlString)
             } else if (UserDefaults.standard.bool(forKey: "notMetric") == false) {
-                
                 let urlString = "https://api.open-meteo.com/v1/forecast?latitude=\(latitude)&longitude=\(longitude)&hourly=soil_moisture_1_3cm&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum&current_weather=true&past_days=3&forecast_days=3&timezone=auto"
                 performRequest(with: urlString)
-
             }
         }
         
-        
         func performRequest(with urlString: String) {
-            if let url = URL(string: urlString) {iiu
+            if let url = URL(string: urlString) {
                 let session = URLSession(configuration: .default)
                 let task = session.dataTask(with: url) { (data, response, error) in
                     if error != nil {

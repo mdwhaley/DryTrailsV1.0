@@ -38,7 +38,6 @@ var weatherUnits = 1
         let name = CoreDataManager.shared.locationsArray[indexPath.row].name!
         let lat = CoreDataManager.shared.locationsArray[indexPath.row].latitude
         let lon = CoreDataManager.shared.locationsArray[indexPath.row].longitude
-
         guard let conditionsVC = self.storyboard?.instantiateViewController(identifier: "conditionsView", creator: { coder in
             return ConditionsViewController(coder: coder, name: name, lat: lat, lon: lon)
             
