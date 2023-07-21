@@ -8,6 +8,7 @@
 import UIKit
 import SwipeCellKit
 import CoreLocation
+import MapKit
 
 class LocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
@@ -19,7 +20,6 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
         let unitsMetric = UserDefaults.standard.bool(forKey: "notMetric")
         unitsDefault.setOn(unitsMetric, animated: false)
         CoreDataManager.shared.fetchLocations()
@@ -59,25 +59,36 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     @IBAction func locationButtonPressed(_ sender: UIButton) {
+        
         locationManager.requestLocation()
+    }
+    func fetchCity(from location: CLLocation, completion: @escaping (_ city: String?, _ error: Error?) -> ()) {
+        CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+            completion(placemarks?.first?.locality,
+                       error)
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
         if let location = locations.last {
             locationManager.stopUpdatingLocation()
-            let name = "Name this Location"
-            let lat = location.coordinate.latitude
-            let lon = location.coordinate.longitude
-            guard let conditionsVC = self.storyboard?.instantiateViewController(identifier: "conditionsView", creator: { coder in
-                return ConditionsViewController(coder: coder, name: name, lat: Float(lat), lon: Float(lon))
+            let _: () = fetchCity(from: location) { city, error in
+                guard let city = city, error == nil else { return }
                 
+                let lat = location.coordinate.latitude
+                let lon = location.coordinate.longitude
+                guard let conditionsVC = self.storyboard?.instantiateViewController(identifier: "conditionsView", creator: { coder in
+                    return ConditionsViewController(coder: coder, name: city, lat: Float(lat), lon: Float(lon))
+                    
                 }) else {
                     fatalError("Failed to load conditionsView from storyboard.")
                 }
-            self.navigationController?.pushViewController(conditionsVC, animated: true)
+                self.navigationController?.pushViewController(conditionsVC, animated: true)
+            }
+            
         }
-        
-        }
+    }
     
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

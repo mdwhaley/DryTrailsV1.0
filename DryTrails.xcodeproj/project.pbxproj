@@ -426,6 +426,7 @@
 				DEVELOPMENT_TEAM = H9MJ7YJ3M9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DryTrails/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow Location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -459,6 +460,7 @@
 				DEVELOPMENT_TEAM = H9MJ7YJ3M9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DryTrails/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow Location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

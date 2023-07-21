@@ -33,12 +33,22 @@ class ConditionsViewController: UIViewController {
     @IBOutlet var precipitationLabels: [UILabel]!
     @IBOutlet weak var soilMoistureLabel: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        locationNameLabel.text = name
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         weatherManager.delegate = self
         weatherManager.fetchWeather(latitude: lat, longitude: lon)
     }
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        locationNameLabel.text = name
+        
+        
+        
+    }
+    
+        
     @IBAction func saveLocation(_ sender: UIBarButtonItem) {
         // Declare Alert message
         let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to save this location?", preferredStyle: .alert)
