@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,7 +35,7 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="57" translatesAutoresizingMaskIntoConstraints="NO" id="ha7-Ns-2ZL" userLabel="TopRowStack">
-                                <rect key="frame" x="39" y="92" width="336.5" height="34.5"/>
+                                <rect key="frame" x="37.5" y="92" width="339.5" height="34.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrR-WG-2Zc">
                                         <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
@@ -43,13 +44,15 @@
                                             <constraint firstAttribute="height" constant="32" id="nf3-Qe-vjw"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="location.fill" catalog="system"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="location.fill" catalog="system" symbolScale="large"/>
+                                        </state>
                                         <connections>
                                             <action selector="locationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F7b-oo-Fwj"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="WJw-zV-25R" userLabel="UnitsStack">
-                                        <rect key="frame" x="89" y="0.0" width="113" height="31"/>
+                                        <rect key="frame" x="89" y="0.0" width="116" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zX-1E-530">
                                                 <rect key="frame" x="0.0" y="0.0" width="22.5" height="31"/>
@@ -65,15 +68,18 @@
                                                 </connections>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°F" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gQ-ps-X55">
-                                                <rect key="frame" x="93.5" y="0.0" width="19.5" height="31"/>
+                                                <rect key="frame" x="93.5" y="0.0" width="22.5" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.88235294819999999" green="0.49803921579999999" blue="0.2941176593" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="udG-nP-OWN" firstAttribute="centerX" secondItem="WJw-zV-25R" secondAttribute="centerX" id="nes-6i-mga"/>
+                                        </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxk-Iu-q7r">
-                                        <rect key="frame" x="259" y="0.0" width="77.5" height="34.5"/>
+                                        <rect key="frame" x="262" y="0.0" width="77.5" height="34.5"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="Search" cornerStyle="dynamic">
                                             <backgroundConfiguration key="background" cornerRadius="24" strokeWidth="3">
                                                 <color key="strokeColor" red="0.88235294819999999" green="0.49803921579999999" blue="0.2941176593" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

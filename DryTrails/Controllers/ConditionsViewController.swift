@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-class ConditionsViewController: UIViewController {
+class ConditionsViewController: UIViewController, WeatherManagerDelegate {
     var weatherManager = WeatherManager()
     var name: String
     var lat: Float
@@ -26,12 +26,18 @@ class ConditionsViewController: UIViewController {
     @IBOutlet weak var soilMoistureLabel: UILabel!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        locationNameLabel.text = name
+        weatherManager.delegate = self
+        weatherManager.fetchWeather(latitude: lat, longitude: lon)
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    }
+    
     
     init?(coder: NSCoder, name: String, lat: Float, lon: Float) {
         self.name = name
@@ -39,16 +45,45 @@ class ConditionsViewController: UIViewController {
         self.lon = lon
         super.init(coder: coder)
     }
+    
     required init?(coder: NSCoder) {
         fatalError("No Location Selected")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        locationNameLabel.text = name
-        weatherManager.delegate = self
-        weatherManager.fetchWeather(latitude: lat, longitude: lon)
+    
+    
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
+    DispatchQueue.main.async {
+        self.temperature.text = weather.temperatureString
+        self.conditionImage.image = UIImage(systemName: weather.conditionName)
+        self.hiTempLabel.text = weather.hiTemperatureString
+        self.loTempLabel.text = weather.loTemperatureString
+        self.sunRiseLabel.text = weather.sunRiseString
+        self.sunSetLabel.text = weather.sunSetString
+        for (index, labels) in
+                self.dateLabels.enumerated() {
+                labels.text = String(weather.time[index].dropFirst(5))
+        }
+        for (index, labels) in
+                self.precipitationLabels.enumerated() {
+                labels.text = "\(String(format: "\(weather.precipitationFormat)",weather.precipitation_sum[index]))\(weather.precipitationString)"
+        }
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+        let result = formatter.string(from: date)
+        let noMinuteResult = result.dropLast(2)
+        let finalResult = noMinuteResult.appending("00")
+        if let index = weather.timeHour.firstIndex(of: finalResult) {
+            let soilMoisture = weather.soil_moisture_1_3cm[index]
+            self.soilMoistureLabel.text = String(format: "%.1f %%", (soilMoisture * 100))
+        }
     }
+}
+func didFailWithError(error: Error) {
+    print(error)
+}
+
     
     @IBAction func saveLocation(_ sender: UIBarButtonItem) {
         // Declare Alert message
@@ -76,37 +111,37 @@ class ConditionsViewController: UIViewController {
         self.present(dialogMessage, animated: true, completion: nil)
     }
 }
-extension ConditionsViewController: WeatherManagerDelegate {
-    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
-        DispatchQueue.main.async {
-            self.temperature.text = weather.temperatureString
-            self.conditionImage.image = UIImage(systemName: weather.conditionName)
-            self.hiTempLabel.text = weather.hiTemperatureString
-            self.loTempLabel.text = weather.loTemperatureString
-            self.sunRiseLabel.text = weather.sunRiseString
-            self.sunSetLabel.text = weather.sunSetString
-            for (index, labels) in
-                    self.dateLabels.enumerated() {
-                    labels.text = String(weather.time[index].dropFirst(5))
-            }
-            for (index, labels) in
-                    self.precipitationLabels.enumerated() {
-                    labels.text = "\(String(format: "\(weather.precipitationFormat)",weather.precipitation_sum[index]))\(weather.precipitationString)"
-            }
-            let date = Date()
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
-            let result = formatter.string(from: date)
-            let noMinuteResult = result.dropLast(2)
-            let finalResult = noMinuteResult.appending("00")
-            if let index = weather.timeHour.firstIndex(of: finalResult) {
-                let soilMoisture = weather.soil_moisture_1_3cm[index]
-                self.soilMoistureLabel.text = String(format: "%.1f %%", (soilMoisture * 100))
-            }
-        }
-    }
-    func didFailWithError(error: Error) {
-        print(error)
-    }
-}
+//extension ConditionsViewController: WeatherManagerDelegate {
+//    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
+//        DispatchQueue.main.async {
+//            self.temperature.text = weather.temperatureString
+//            self.conditionImage.image = UIImage(systemName: weather.conditionName)
+//            self.hiTempLabel.text = weather.hiTemperatureString
+//            self.loTempLabel.text = weather.loTemperatureString
+//            self.sunRiseLabel.text = weather.sunRiseString
+//            self.sunSetLabel.text = weather.sunSetString
+//            for (index, labels) in
+//                    self.dateLabels.enumerated() {
+//                    labels.text = String(weather.time[index].dropFirst(5))
+//            }
+//            for (index, labels) in
+//                    self.precipitationLabels.enumerated() {
+//                    labels.text = "\(String(format: "\(weather.precipitationFormat)",weather.precipitation_sum[index]))\(weather.precipitationString)"
+//            }
+//            let date = Date()
+//            let formatter = DateFormatter()
+//            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+//            let result = formatter.string(from: date)
+//            let noMinuteResult = result.dropLast(2)
+//            let finalResult = noMinuteResult.appending("00")
+//            if let index = weather.timeHour.firstIndex(of: finalResult) {
+//                let soilMoisture = weather.soil_moisture_1_3cm[index]
+//                self.soilMoistureLabel.text = String(format: "%.1f %%", (soilMoisture * 100))
+//            }
+//        }
+//    }
+//    func didFailWithError(error: Error) {
+//        print(error)
+//    }
+//}
 
