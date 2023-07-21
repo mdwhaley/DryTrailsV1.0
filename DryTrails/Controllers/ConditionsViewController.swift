@@ -36,6 +36,8 @@ class ConditionsViewController: UIViewController, WeatherManagerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        
     }
     
     
