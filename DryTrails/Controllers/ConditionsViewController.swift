@@ -13,15 +13,7 @@ class ConditionsViewController: UIViewController {
     var name: String
     var lat: Float
     var lon: Float
-    init?(coder: NSCoder, name: String, lat: Float, lon: Float) {
-        self.name = name
-        self.lat = lat
-        self.lon = lon
-        super.init(coder: coder)
-    }
-    required init?(coder: NSCoder) {
-        fatalError("No Location Selected")
-    }
+    
     @IBOutlet weak var temperature: UILabel!
     @IBOutlet weak var locationNameLabel: UILabel!
     @IBOutlet weak var loTempLabel: UILabel!
@@ -33,22 +25,31 @@ class ConditionsViewController: UIViewController {
     @IBOutlet var precipitationLabels: [UILabel]!
     @IBOutlet weak var soilMoistureLabel: UILabel!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        weatherManager.delegate = self
-        weatherManager.fetchWeather(latitude: lat, longitude: lon)
-    }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationNameLabel.text = name
-        
         
         
     }
     
-        
+    init?(coder: NSCoder, name: String, lat: Float, lon: Float) {
+        self.name = name
+        self.lat = lat
+        self.lon = lon
+        super.init(coder: coder)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("No Location Selected")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        locationNameLabel.text = name
+        weatherManager.delegate = self
+        weatherManager.fetchWeather(latitude: lat, longitude: lon)
+    }
+    
     @IBAction func saveLocation(_ sender: UIBarButtonItem) {
         // Declare Alert message
         let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to save this location?", preferredStyle: .alert)
