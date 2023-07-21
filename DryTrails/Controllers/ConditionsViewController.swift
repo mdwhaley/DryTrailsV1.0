@@ -98,3 +98,4 @@ extension ConditionsViewController: WeatherManagerDelegate {
         print(error)
     }
 }
+

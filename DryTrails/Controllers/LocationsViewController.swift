@@ -7,20 +7,30 @@
 
 import UIKit
 import SwipeCellKit
+import CoreLocation
 
-class LocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-var weatherUnits = 1
+class LocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
+    
+    var weatherUnits = 1
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
         let unitsMetric = UserDefaults.standard.bool(forKey: "notMetric")
         unitsDefault.setOn(unitsMetric, animated: false)
         CoreDataManager.shared.fetchLocations()
         configureTableView()
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         locationsTable.reloadData()
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tableView.rowHeight = 80
         return CoreDataManager.shared.locationsArray.count
@@ -46,6 +56,36 @@ var weatherUnits = 1
             }
         self.navigationController?.pushViewController(conditionsVC, animated: true)
     }
+    
+    
+    @IBAction func locationButtonPressed(_ sender: UIButton) {
+        locationManager.requestLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            locationManager.stopUpdatingLocation()
+            let name = "Name this Location"
+            let lat = location.coordinate.latitude
+            let lon = location.coordinate.longitude
+            guard let conditionsVC = self.storyboard?.instantiateViewController(identifier: "conditionsView", creator: { coder in
+                return ConditionsViewController(coder: coder, name: name, lat: Float(lat), lon: Float(lon))
+                
+                }) else {
+                    fatalError("Failed to load conditionsView from storyboard.")
+                }
+            self.navigationController?.pushViewController(conditionsVC, animated: true)
+        }
+        
+        }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+
+
+    
     
     @IBAction func searchButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "searchView", sender: self)
@@ -73,6 +113,8 @@ var weatherUnits = 1
     }
 }
 
+
+
 extension LocationsViewController: SwipeTableViewCellDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
@@ -94,3 +136,5 @@ extension LocationsViewController: SwipeTableViewCellDelegate {
         return options
     }
 }
+
+
