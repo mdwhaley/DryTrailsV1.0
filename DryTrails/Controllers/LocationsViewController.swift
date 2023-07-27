@@ -15,11 +15,13 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     var weatherUnits = 1
     let locationManager = CLLocationManager()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        
         let unitsMetric = UserDefaults.standard.bool(forKey: "notMetric")
         unitsDefault.setOn(unitsMetric, animated: false)
         CoreDataManager.shared.fetchLocations()
@@ -28,6 +30,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         locationsTable.reloadData()
     }
     
@@ -59,7 +62,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     @IBAction func locationButtonPressed(_ sender: UIButton) {
-        
+        locationManager.startUpdatingLocation()
         locationManager.requestLocation()
     }
     func fetchCity(from location: CLLocation, completion: @escaping (_ city: String?, _ error: Error?) -> ()) {

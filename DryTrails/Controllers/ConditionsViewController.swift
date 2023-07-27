@@ -25,20 +25,17 @@ class ConditionsViewController: UIViewController, WeatherManagerDelegate {
     @IBOutlet var precipitationLabels: [UILabel]!
     @IBOutlet weak var soilMoistureLabel: UILabel!
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         locationNameLabel.text = name
         weatherManager.delegate = self
         weatherManager.fetchWeather(latitude: lat, longitude: lon)
-        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        
-    }
+    
+//    override func viewDidLoad(){
+//        super.viewDidLoad()
+//    }
     
     
     init?(coder: NSCoder, name: String, lat: Float, lon: Float) {
