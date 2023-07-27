@@ -426,6 +426,7 @@
 				DEVELOPMENT_TEAM = H9MJ7YJ3M9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DryTrails/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow Location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -438,6 +439,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING2 = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mikewhaley.DryTrails;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -458,6 +460,7 @@
 				DEVELOPMENT_TEAM = H9MJ7YJ3M9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DryTrails/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow Location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -470,6 +473,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING2 = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mikewhaley.DryTrails;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
