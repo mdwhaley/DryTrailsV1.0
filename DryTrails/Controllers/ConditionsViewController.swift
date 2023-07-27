@@ -33,9 +33,9 @@ class ConditionsViewController: UIViewController, WeatherManagerDelegate {
     }
     
     
-//    override func viewDidLoad(){
-//        super.viewDidLoad()
-//    }
+    override func viewDidLoad(){
+        super.viewDidLoad()
+    }
     
     
     init?(coder: NSCoder, name: String, lat: Float, lon: Float) {
