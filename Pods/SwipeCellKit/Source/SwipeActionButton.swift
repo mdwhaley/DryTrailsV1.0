@@ -34,9 +34,9 @@ class SwipeActionButton: UIButton {
         }
     }
     
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIView.noIntrinsicMetric, height: contentEdgeInsets.top + alignmentRect.height + contentEdgeInsets.bottom)
-    }
+//    override var intrinsicContentSize: CGSize {
+//        return CGSize(width: UIView.noIntrinsicMetric, height: contentEdgeInsets.top + alignmentRect.height + contentEdgeInsets.bottom)
+//    }
     
     convenience init(action: SwipeAction) {
         self.init(frame: .zero)
@@ -74,7 +74,7 @@ class SwipeActionButton: UIButton {
         let textWidth = titleBoundingRect(with: CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)).width
         let imageWidth = currentImage?.size.width ?? 0
         
-        return min(width, max(textWidth, imageWidth) + contentEdgeInsets.left + contentEdgeInsets.right)
+        return min(width, max(textWidth, imageWidth)) /*+ contentEdgeInsets.left + contentEdgeInsets.right)*/
     }
     
     func titleBoundingRect(with size: CGSize) -> CGRect {
