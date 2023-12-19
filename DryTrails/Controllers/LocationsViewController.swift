@@ -63,7 +63,7 @@ class LocationsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBAction func locationButtonPressed(_ sender: UIButton) {
         locationManager.startUpdatingLocation()
-        locationManager.requestLocation()
+//        locationManager.requestLocation()
     }
     func fetchCity(from location: CLLocation, completion: @escaping (_ city: String?, _ error: Error?) -> ()) {
         CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in

@@ -17,7 +17,7 @@ struct WeatherModel {
     let sunset: [String]
     let weathercode: Int
     let timeHour: [String]
-    let soil_moisture_1_3cm: [Double]
+    let soil_moisture_0_1cm: [Double]
     let is_day: Int
     
     var temperatureString: String {

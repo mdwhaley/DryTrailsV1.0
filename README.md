@@ -8,5 +8,5 @@ Users can use the current location or search for a location by address or city.
 
 Locations can be saved with the default name or a user provided name.
 
-The weather data is pulled from openmeteo.com.
+The weather data is pulled from openmeteo.com with updates every hour.
 

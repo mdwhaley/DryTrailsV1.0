@@ -20,7 +20,7 @@ struct Main: Codable {
 }
 struct Hourly: Codable {
     let time: [String]
-    let soil_moisture_1_3cm: [Double]
+    let soil_moisture_0_1cm: [Double]
 }
 
 struct Daily: Codable {
