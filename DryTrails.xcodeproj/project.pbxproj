@@ -447,7 +447,7 @@
 				INFOPLIST_FILE = DryTrails/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DryTrails;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location is used to provide a local forecast of the current location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location is used to provide weather data at the current location including current soil moisture";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -486,7 +486,7 @@
 				INFOPLIST_FILE = DryTrails/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DryTrails;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location is used to provide a local forecast of the current location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location is used to provide weather data at the current location including current soil moisture";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
