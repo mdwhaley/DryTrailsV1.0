@@ -9,6 +9,7 @@ import CoreData
 
 class CoreDataManager {
     static let shared = CoreDataManager()
+//    var locationsArray = [Locations]()
     var locationsArray = [Locations]()
     let persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "DryTrails")
