@@ -18,6 +18,7 @@ struct WeatherModel {
     let weathercode: Int
     let timeHour: [String]
     let soil_moisture_0_1cm: [Double]
+    let soil_temperature_0cm: [Double]
     let is_day: Int
     
     var temperatureString: String {
@@ -30,6 +31,10 @@ struct WeatherModel {
     var hiTemperatureString: String {
         return String(format: "%.0f", temperature_2m_max) + degreesString
     }
+    
+//    var soilTemperatureString: String {
+//        return String(format: "%.0f", soil_temperature_0cm) + degreesString
+//    }
     
     var sunRiseString: String {
         return "Sunrise: " + String(sunrise[3].dropFirst(11))

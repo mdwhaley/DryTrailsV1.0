@@ -21,6 +21,7 @@ struct Main: Codable {
 struct Hourly: Codable {
     let time: [String]
     let soil_moisture_0_1cm: [Double]
+    let soil_temperature_0cm: [Double]
 }
 
 struct Daily: Codable {

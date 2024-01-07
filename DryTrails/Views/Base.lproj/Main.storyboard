@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ayp-6r-P6e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ayp-6r-P6e">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -445,23 +445,40 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="lF0-8q-Wgv" userLabel="MoistureStack">
-                                <rect key="frame" x="118" y="576" width="178" height="68"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ifh-7Q-Qe2" userLabel="SoilMoistureStack">
+                                <rect key="frame" x="98.5" y="578" width="217" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soil Moisture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljY-g1-xij">
-                                        <rect key="frame" x="0.0" y="0.0" width="178" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soil Moisture:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljY-g1-xij">
+                                        <rect key="frame" x="0.0" y="0.0" width="157" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="7sj-5q-DiO"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <color key="textColor" name="AccentColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQt-iS-OfX">
-                                        <rect key="frame" x="63" y="44" width="52" height="24"/>
+                                        <rect key="frame" x="165" y="0.0" width="52" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.92941176469999998" green="0.94901960780000005" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="pr9-Gq-beA" userLabel="SoilTempStack">
+                                <rect key="frame" x="114.5" y="620" width="185" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soil Temp:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDy-3Z-xEo" userLabel="Soil Temp">
+                                        <rect key="frame" x="0.0" y="0.0" width="119" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="Dvv-W0-cm5"/>
+                                            <constraint firstAttribute="height" constant="30" id="2ct-hn-jun"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="textColor" name="AccentColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQ1-6p-Dg0" userLabel="Soil Temp Label">
+                                        <rect key="frame" x="133" y="0.0" width="52" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.92941176469999998" green="0.94901960780000005" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -472,14 +489,16 @@
                         <viewLayoutGuide key="safeArea" id="lw8-nw-C5W"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ifh-7Q-Qe2" firstAttribute="top" secondItem="dcG-yD-PEA" secondAttribute="bottom" constant="12" id="2bk-en-jTI"/>
                             <constraint firstItem="dcG-yD-PEA" firstAttribute="centerX" secondItem="3vi-0e-hoV" secondAttribute="centerX" id="4j2-r1-FmB"/>
+                            <constraint firstItem="pr9-Gq-beA" firstAttribute="centerX" secondItem="3vi-0e-hoV" secondAttribute="centerX" id="8TC-yz-7cK"/>
                             <constraint firstItem="kaU-Ou-AkE" firstAttribute="centerX" secondItem="3vi-0e-hoV" secondAttribute="centerX" id="JtK-7B-qil"/>
                             <constraint firstItem="YzI-xy-USg" firstAttribute="top" secondItem="kaU-Ou-AkE" secondAttribute="bottom" constant="10" id="KfA-aT-C1U"/>
-                            <constraint firstItem="lF0-8q-Wgv" firstAttribute="centerX" secondItem="3vi-0e-hoV" secondAttribute="centerX" id="QlW-lw-m31"/>
                             <constraint firstItem="YzI-xy-USg" firstAttribute="centerX" secondItem="3vi-0e-hoV" secondAttribute="centerX" id="X5P-Ug-cnO"/>
                             <constraint firstItem="dcG-yD-PEA" firstAttribute="top" secondItem="YzI-xy-USg" secondAttribute="bottom" constant="10" id="bdM-u8-qGa"/>
+                            <constraint firstItem="ifh-7Q-Qe2" firstAttribute="centerX" secondItem="3vi-0e-hoV" secondAttribute="centerX" id="dUo-LU-guM"/>
                             <constraint firstItem="kaU-Ou-AkE" firstAttribute="top" secondItem="lw8-nw-C5W" secondAttribute="top" id="f9x-ft-xpD"/>
-                            <constraint firstItem="lF0-8q-Wgv" firstAttribute="top" secondItem="dcG-yD-PEA" secondAttribute="bottom" constant="10" id="yDd-1z-BrB"/>
+                            <constraint firstItem="pr9-Gq-beA" firstAttribute="top" secondItem="ifh-7Q-Qe2" secondAttribute="bottom" constant="12" id="vNX-cr-wzo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vdp-Ef-kD6">
@@ -495,6 +514,7 @@
                         <outlet property="loTempLabel" destination="7PL-BE-FQH" id="MyU-Js-aYm"/>
                         <outlet property="locationNameLabel" destination="ncV-QM-Qst" id="mfk-fw-1fj"/>
                         <outlet property="soilMoistureLabel" destination="NQt-iS-OfX" id="A9K-hp-kQo"/>
+                        <outlet property="soilTempLabel" destination="bQ1-6p-Dg0" id="gaD-2G-64n"/>
                         <outlet property="sunRiseLabel" destination="WDa-Zz-Aac" id="um3-NK-arB"/>
                         <outlet property="sunSetLabel" destination="PjN-UD-aPv" id="gsN-BL-hDj"/>
                         <outlet property="temperature" destination="HQ6-wv-K36" id="a4q-Uu-JFS"/>
@@ -514,7 +534,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TFc-Ut-EGW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3036.2790697674418" y="-2.5751072961373391"/>
+            <point key="canvasLocation" x="3036.2318840579715" y="-2.6785714285714284"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jra-2D-Jom">
@@ -536,7 +556,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RNX-D0-3Pi"/>
+        <segue reference="4z9-aI-AdH"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.88235294819999999" green="0.49803921579999999" blue="0.2941176593" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
