@@ -21,10 +21,10 @@ struct WeatherManager {
                 let tempUnits = "fahrenheit"
                 let windUnits = "mph"
                 let precipitationUnits = "inch"
-                let urlString = "https://api.open-meteo.com/v1/forecast?latitude=\(latitude)&longitude=\(longitude)&hourly=soil_moisture_0_1cm&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum&current_weather=true&temperature_unit=\(tempUnits)&windspeed_unit=\(windUnits)&precipitation_unit=\(precipitationUnits)&past_days=3&forecast_days=3&timezone=auto"
+                let urlString = "https://api.open-meteo.com/v1/forecast?latitude=\(latitude)&longitude=\(longitude)&hourly=soil_temperature_0cm,soil_moisture_0_1cm&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum&current_weather=true&temperature_unit=\(tempUnits)&windspeed_unit=\(windUnits)&precipitation_unit=\(precipitationUnits)&past_days=3&forecast_days=3&timezone=auto"
                 performRequest(with: urlString)
             } else if (UserDefaults.standard.bool(forKey: "notMetric") == false) {
-                let urlString = "https://api.open-meteo.com/v1/forecast?latitude=\(latitude)&longitude=\(longitude)&hourly=soil_moisture_0_1cm&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum&current_weather=true&past_days=3&forecast_days=3&timezone=auto"
+                let urlString = "https://api.open-meteo.com/v1/forecast?latitude=\(latitude)&longitude=\(longitude)&hourly=soil_temperature_0cm,soil_moisture_0_1cm&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum&current_weather=true&past_days=3&forecast_days=3&timezone=auto"
                 performRequest(with: urlString)
             }
         }
@@ -62,7 +62,8 @@ struct WeatherManager {
                 let hour = decodedData.hourly.time
                 let isLight = decodedData.current_weather.is_day
                 let soilMoisture = decodedData.hourly.soil_moisture_0_1cm
-                let weather = WeatherModel(temperature: temp, temperature_2m_min: minTemp, temperature_2m_max: maxTemp, precipitation_sum: dailyRain, time: dates, sunrise: sunriseTime, sunset: sunsetTime, weathercode: conditionName, timeHour: hour, soil_moisture_0_1cm: soilMoisture, is_day: isLight)
+                let soilTemperature = decodedData.hourly.soil_temperature_0cm
+                let weather = WeatherModel(temperature: temp, temperature_2m_min: minTemp, temperature_2m_max: maxTemp, precipitation_sum: dailyRain, time: dates, sunrise: sunriseTime, sunset: sunsetTime, weathercode: conditionName, timeHour: hour, soil_moisture_0_1cm: soilMoisture, soil_temperature_0cm: soilTemperature, is_day: isLight)
                 return weather
                 
             } catch {

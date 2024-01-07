@@ -24,6 +24,8 @@ class ConditionsViewController: UIViewController, WeatherManagerDelegate {
     @IBOutlet var dateLabels: [UILabel]!
     @IBOutlet var precipitationLabels: [UILabel]!
     @IBOutlet weak var soilMoistureLabel: UILabel!
+    @IBOutlet weak var soilTempLabel: UILabel!
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -76,6 +78,8 @@ class ConditionsViewController: UIViewController, WeatherManagerDelegate {
         if let index = weather.timeHour.firstIndex(of: finalResult) {
             let soilMoisture = weather.soil_moisture_0_1cm[index]
             self.soilMoistureLabel.text = String(format: "%.1f %%", (soilMoisture * 100))
+            let soilTemp = weather.soil_temperature_0cm[index]
+            self.soilTempLabel.text = String(soilTemp) + weather.degreesString
         }
     }
 }
