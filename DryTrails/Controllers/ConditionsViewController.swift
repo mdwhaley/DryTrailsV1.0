@@ -71,6 +71,7 @@ class ConditionsViewController: UIViewController, WeatherManagerDelegate {
         }
         let date = Date()
         let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
         let result = formatter.string(from: date)
         let noMinuteResult = result.dropLast(2)
@@ -82,16 +83,20 @@ class ConditionsViewController: UIViewController, WeatherManagerDelegate {
                 self.soilMoistureLabel.text = "--"
             }
             if let soilTemp = weather.soil_temperature_0cm[index] {
-                self.soilTempLabel.text = String(soilTemp) + weather.degreesString
+                self.soilTempLabel.text = String(format: "%.0f", soilTemp) + weather.degreesString
             } else {
                 self.soilTempLabel.text = "--"
             }
         }
     }
 }
-func didFailWithError(error: Error) {
-    print(error)
-}
+    func didFailWithError(error: Error) {
+        print(error)
+        DispatchQueue.main.async {
+            self.soilMoistureLabel.text = "--"
+            self.soilTempLabel.text = "--"
+        }
+    }
 
     
     @IBAction func saveLocation(_ sender: UIBarButtonItem) {
