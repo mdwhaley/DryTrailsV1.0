@@ -76,10 +76,16 @@ class ConditionsViewController: UIViewController, WeatherManagerDelegate {
         let noMinuteResult = result.dropLast(2)
         let finalResult = noMinuteResult.appending("00")
         if let index = weather.timeHour.firstIndex(of: finalResult) {
-            let soilMoisture = weather.soil_moisture_0_1cm[index]
-            self.soilMoistureLabel.text = String(format: "%.1f %%", (soilMoisture * 100))
-            let soilTemp = weather.soil_temperature_0cm[index]
-            self.soilTempLabel.text = String(soilTemp) + weather.degreesString
+            if let soilMoisture = weather.soil_moisture_0_1cm[index] {
+                self.soilMoistureLabel.text = String(format: "%.1f %%", (soilMoisture * 100))
+            } else {
+                self.soilMoistureLabel.text = "--"
+            }
+            if let soilTemp = weather.soil_temperature_0cm[index] {
+                self.soilTempLabel.text = String(soilTemp) + weather.degreesString
+            } else {
+                self.soilTempLabel.text = "--"
+            }
         }
     }
 }
